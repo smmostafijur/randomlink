@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    function m() {
+      var link = "https://www.dimoenespanol.com/?keyword=&matchtype=&network=d&adposition=&device=m&devicemodel=xiaomi%2Bm2006c3mg&target=&placement=melaint.com&gc_id=14797690445&gclid=EAIaIQobChMIwrn5msPr9gIVNyetBh29ZA-pEAEYASAAEgJEsfD_BwE&feeditemid=&utm_source=google&utm_medium=search&utm_campaign=nv_es_auto_accidents__&utm_content=spanish&utm_term=auto_accident&gclid=EAIaIQobChMIwrn5msPr9gIVNyetBh29ZA-pEAEYASAAEgJEsfD_BwE";
+      var randomnumber = Math.floor(Math.random() * (9999999999 - 11111 + 1)) + 11111;
+      console.log(randomnumber);
+
+      var x = document.getElementById("p1").innerHTML = ""+link+randomnumber;
+    }
+
+
+    function copyToClipboard(element) {
+      m();
+      var $temp = $("<input>");
+      $("body").append($temp);
+      $temp.val($(element).text()).select();
+      document.execCommand("copy");
+      $temp.remove();
+
+      //masum
+      setTimeout(function() {
+        var i = 1;
+        if (i < 2) {
+          copyToClipboard('#p1');
+        }
+      },1000);
+      //masum
+    }
+  </script>
+
+
+  <p id="p1">
+    Test Text
+  </p>
+  <button class="btn" onclick="copyToClipboard('#p1')">Copy</button>
+
+  <style type="text/css">
+    .btn {
+      height: 100vh;
+      width: 100%;
+    }
+    #p1 {
+      visibility: visible;
+    }
+
+  </style>
+</body>
+</html>
